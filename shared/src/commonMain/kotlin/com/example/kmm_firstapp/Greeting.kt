@@ -32,8 +32,7 @@ class Greeting {
 
     @Throws(Throwable::class)
     suspend fun greeting(): String {
-        return "${getHello().random().string}! " +
-                "There are only ${dayUntilNewYear()} day left! 🎅🏻"
+        return "${getHello().random().string}! "
     }
 
     private suspend fun getHello(): List<Hello> {
@@ -44,11 +43,11 @@ class Greeting {
 @Serializable
 data class Hello(
     val string: String,
-    //val lang: String
 )
 
+/*
 fun dayUntilNewYear(): Int {
     val today = Clock.System.todayAt(TimeZone.currentSystemDefault())
     val closestNewYear = LocalDate(today.year + 1, 1, 1)
     return today.daysUntil(closestNewYear)
-}
+}*/
